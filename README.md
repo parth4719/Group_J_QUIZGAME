@@ -1,2 +1,2 @@
-# Group_J_TOPIC
+# Group_J_QuizGame
 Project topic 
