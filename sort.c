@@ -125,8 +125,6 @@ void swap(int *a, int *b) {
 }
 
 /**
-* \brief The randomize function which change the order of elements in array.
-*
 * @brief The randomize function which change the order of elements in array.
 * @author Pavan Patel
 * The funtion will take any element on random basis and pass to swap() function.
