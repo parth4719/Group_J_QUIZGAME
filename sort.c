@@ -27,9 +27,9 @@ FILE * filehandle;
 char lyne[121];
 char *item;
 int reccount = 0;
-int k,l,m;
 int arr[] = {};
-
+char userinput[] = {};
+int user_score;
 
 /* Define a structure */
         typedef struct {
@@ -105,17 +105,101 @@ int main() {
 	 	//Starting the quiz
 	 	char choice = startquiz();
 	 	
+	switch(choice){
+    default:
+        printf("Wrong Entry!!");
+        printf("Press any key and re-enter correct option");
+       
+	case 'S':
+        system("cls");
+		printf("\n\n\n\n\n\n\n\n\n\n\t\t\tEnter your name:");
+		gets(playername);
+		
+		system("cls");
+		int i;
+		for (i=0; i<reccount-1; i++) {
+        	
+        		int index = arr[i];
+        		char Answer;
+        		int count=10;
+        		
+        		// All Questions and four option will be printed
+                while(count>0&&_kbhit()==0)
+                {
+                	printf("\n\n");
+                	printf("%d\n",i+1);
+                	printf("%s?\n",record[index].que);
+                	printf("A.%s\t",record[index].opt1);
+                	printf("B.%s\t",record[index].opt2);
+                	printf("C.%s\t",record[index].opt3);
+                	printf("D.%s\t",record[index].opt4);
+                	printf("\n\n\n Time Remaining: %d\t",count);
+					count--;
+                	sleep(1);
+                	system("cls");
+                }
+                	if (kbhit()==0)
+					{
+						// timer overflow
+						userinput[i] = "0";
+					}
+					else
+					{
+						// user input
+						char temp= toupper(getch());
+						userinput[i] = temp;
+					}
+
+                system("cls");
+            
+            }
+            
+         user_score = calculatescore(userinput);
+			
+		}
+	 	
     return 0;
 }
+
+/**
+* @brief Function calculate user score.
+* @author Vimil Rathod
+* The function use to calculate score based on user answer given at time of quiz
+* Function will match all the given answer with the correct answer stored in excel file  
+* @param[in] char userinput[], array of chracter that has value given by the user
+* @param[in] pointer to second array element
+* @Return int value of total score of the user
+*
+*/
+
+
+int calculatescore(char userinput[]){
+			int t;
+			int count = 0;
+            for (t=0; t<reccount-1; t++){
+            	
+            	char* pPosition = strchr(record[t].ans, userinput[t]);
+            	if(pPosition != 0){
+            		//printf("1");
+            		count++;
+				}
+				else{
+            		//printf("0");
+				}
+			}
+			return count;
+				
+}
+
 
 /**
 * @brief The Swap function will to exchange data.
 * @author Pavan Patel
 * The function is part of randomize() function.
 * Function will switch each other data and store the result value at each other address  
-*
 * @param[in] pointer to one of the array element
 * @param[in] pointer to second array element
+*
 */
 
 void swap(int *a, int *b) {
@@ -152,7 +236,6 @@ void randomize(int arr[], int n) {
 * The function will wait for the user input and then store the result 
 * At the end choice of the user will be returned to main function.
 * @Return char choice that is user input
-
 *
 */
 char startquiz() {
