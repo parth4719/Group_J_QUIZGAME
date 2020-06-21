@@ -29,7 +29,7 @@ char *item;
 int reccount = 0;
 int arr[] = {};
 char userinput[] = {};
-int user_score;
+int user_score, highest_score;
 
 /* Define a structure */
         typedef struct {
@@ -109,7 +109,11 @@ int main() {
     default:
         printf("Wrong Entry!!");
         printf("Press any key and re-enter correct option");
-       
+    case 'Q':
+        quit();
+    case 'V':
+        display_score();
+		goto mainhome;   
 	case 'S':
         system("cls");
 		printf("\n\n\n\n\n\n\n\n\n\n\t\t\tEnter your name:");
@@ -157,7 +161,15 @@ int main() {
          user_score = calculatescore(userinput);
 			
 		}
-	 	
+	 	if(compare_score() == true){
+			printf("congratulations your score is highest score");
+			printf("Your score is : %d",user_score );
+		}
+		else{
+			printf("Your score is : %d",user_score );
+			printf("sorry! your score is not highest score");
+		}
+
     return 0;
 }
 
@@ -259,3 +271,93 @@ char startquiz() {
     return choice;
 }
 
+/**
+* @author Parth Patel
+* \fn bool compare_score(int user_score, int highest_score)
+* @param[in] int user_score achieved by the user in current quiz game in terms of the integer.
+* @param[in] int highest_score ever scored in the game in terms of integer.
+* @return Boolean true if user_score is greater than highest_score else false
+* @brief   	The function compares user_score with the existed highest_score stored in the text file.
+ 	* The function will return true if highest_score needs to be updated for current user else it will return false if not needed. 
+ 	* If there is no highest score stored in the text file, the function updateTextFile will generate a new text file named highest_score.
+	 
+	 */ 
+
+bool compare_score(){
+
+	FILE *infile; 
+
+	infile = fopen("C:\\Users\\prthp\\OneDrive\\Documents\\file1.txt", "r");       
+	/* relative path for file */
+
+	if ( infile == NULL ) {  
+	/* error checking with fopen call */
+    printf("Unable to open file."); 
+    exit(1);
+	} 
+
+	char outstream[255];
+
+	fscanf(infile, "%s", outstream); 
+
+	/* get two string value username and highest score. */
+
+	int i=0,j=0, ctr=0;
+	char newString[10][10]; 
+	
+	/* seperate two string. */
+ 
+	for(i=0;i<=(strlen(outstream));i++){
+    /* if space or NULL found, assign NULL into newString[ctr] */
+    if(outstream[i]==','||outstream[i]=='\0'){
+        newString[ctr][j]='\0';
+        ctr++;  /*for next word */
+        j=0;    /*for next word, init index to 0 */
+        }
+    else{
+        newString[ctr][j]=outstream[i];
+        j++;
+        }
+	}
+    
+	fclose(infile); 
+
+	/* convert highest score string value into integer value.*/
+    
+	highest_score= atoi(newString[1]);
+  
+	/* compare highest score with current user socre. return true if user score is higher than highest score else false. */
+    
+	if(highest_score > user_score){
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+
+/**
+* @author Parth Patel
+* @brief   	The function display the highest score user recorded in the system.
+ 	
+	 */ 
+
+void display_score()
+{
+	system("cls");
+	
+	printf("\n\n\t\t*************************************************************");
+	printf("\n\n\t\t Secured Highest Score is %d",highest_score);
+	printf("\n\n\t\t*************************************************************");
+	getch();
+}
+
+/**
+* @author Parth Patel
+* @brief   	The function terminate all the ongoing process and exit.
+ 	
+	 */ 
+void quit()
+{
+	exit(1);
+}
