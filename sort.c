@@ -1,3 +1,13 @@
+/**
+* \file main.c
+*
+* Contains the main function from which different functions
+* located in other files are called to perform different
+* tasks excel based on the
+* user inputs.
+*
+*/
+
 
 #include<windows.h>
 #include <stdio.h>
@@ -35,6 +45,15 @@ int arr[] = {};
 
 int main() {
 	
+/**
+* \brief The main function which distributes various tasks to other functions.
+*
+* Extract data from excel that is in csv format - comma seperated
+* Based on the data retrieved from the file it will be further seperated and stored in array of structure.
+* and this data will be used further in quiz.
+*
+*/
+	
         /* Abstracting data from the excel file */
         /* open file */
 
@@ -63,7 +82,6 @@ int main() {
                 item = strtok(NULL,"\n");
                 strcpy(record[reccount].ans,item);
 
-                //printf("Day is : %s\n",record[reccount].que);
                 reccount++;
                 }
 
@@ -87,13 +105,27 @@ int main() {
     return 0;
 }
 
-
+/**
+* \brief The Swap function will to exchange data.
+*
+* The function is part of randomize() function.
+* Function will switch each other data and store the result value at each other address  
+*1
+*/
 void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
     *b = temp;
 }
 
+/**
+* \brief The randomize function which change the order of elements in array.
+*
+* The funtion will take any element on random basis and pass to swap() function.
+* Two of these element will swap each other place and loop continues untill all elements are swapped 
+* and this data will be changed every time whenever user takes quiz.
+*
+*/
 void randomize(int arr[], int n) {
     srand(time(NULL));
     int i;
@@ -102,5 +134,4 @@ void randomize(int arr[], int n) {
         swap(&arr[i], &arr[j]);
     }
 }
-
 
