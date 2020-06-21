@@ -47,8 +47,8 @@ int main() {
 	
 /**
 * \brief The main function which distributes various tasks to other functions.
-*
-* Extract data from excel that is in csv format - comma seperated
+* @author Pavan Patel
+* @Extract data from excel that is in csv format - comma seperated
 * Based on the data retrieved from the file it will be further seperated and stored in array of structure.
 * and this data will be used further in quiz.
 *
@@ -102,16 +102,22 @@ int main() {
 		int n = reccount - 1;
 	 	randomize (arr, n);
 	 	
+	 	//Starting the quiz
+	 	char choice = startquiz();
+	 	
     return 0;
 }
 
 /**
-* \brief The Swap function will to exchange data.
-*
+* @brief The Swap function will to exchange data.
+* @author Pavan Patel
 * The function is part of randomize() function.
 * Function will switch each other data and store the result value at each other address  
-*1
+*
+* @param[in] pointer to one of the array element
+* @param[in] pointer to second array element
 */
+
 void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
@@ -119,11 +125,13 @@ void swap(int *a, int *b) {
 }
 
 /**
-* \brief The randomize function which change the order of elements in array.
-*
+* @brief The randomize function which change the order of elements in array.
+* @author Pavan Patel
 * The funtion will take any element on random basis and pass to swap() function.
 * Two of these element will swap each other place and loop continues untill all elements are swapped 
 * and this data will be changed every time whenever user takes quiz.
+* @param[in] arr[] integer array
+* @param[in] n No of elements in array
 *
 */
 void randomize(int arr[], int n) {
@@ -133,5 +141,38 @@ void randomize(int arr[], int n) {
         int j = rand() % (i+1);
         swap(&arr[i], &arr[j]);
     }
+}
+
+
+
+/**
+* @brief The start quiz function will intiate first display screen.
+* @author Pavan Patel
+* The funtion will display multiple option to select for the user.
+* The function will wait for the user input and then store the result 
+* At the end choice of the user will be returned to main function.
+* @Return char choice that is user input
+
+*
+*/
+char startquiz() {
+     char choice;
+     printf("\n \t\t------------ Quiz Game -----------------");
+     printf("\n\t\t________________________________________");
+
+     printf("\n\t\t\t   WELCOME ");
+     printf("\n\t\t\t      to ");
+     printf("\n\t\t\t   THE QUIZ GAME ");
+     printf("\n\t\t________________________________________");
+     
+     printf("\n\t\t > Press S to start the game");
+     printf("\n\t\t > Press V to view the highest score  ");
+     printf("\n\t\t > Press R to reset score");
+     printf("\n\t\t > press H for help            ");
+     printf("\n\t\t > press Q to quit             ");
+     printf("\n\t\t________________________________________\n\n");
+
+    choice=toupper(getch());
+    return choice;
 }
 
