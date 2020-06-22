@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 /* Function declaration*/
 
@@ -111,6 +112,15 @@ int main() {
         printf("Press any key and re-enter correct option");
     case 'Q':
         quit();
+	case 'H':
+        help();
+		getch();
+		goto mainhome;
+    case 'R':
+        reset_score();
+		getch();
+		goto mainhome;
+
     case 'V':
         display_score();
 		goto mainhome;   
@@ -161,7 +171,7 @@ int main() {
          user_score = calculatescore(userinput);
 			
 		}
-	 	if(compare_score() == true){
+	 	if(updatetextfile(user_score,playername) == true){
 			printf("congratulations your score is highest score");
 			printf("Your score is : %d",user_score );
 		}
@@ -271,13 +281,56 @@ char startquiz() {
     return choice;
 }
 
+/** 
+ * @author Hitul Shah
+ * \fn bool updatetextfile (int user_score, char* user_name)
+ *	@param[in] int user_score score achieved by the user in current quiz game as integer.
+ *	@param[in] char* user_name pointer user_name which stores the user name as a string.
+ *	@return Boolean true if file is changed else false
+ * @brief 	Initially, function will create file having data of the first user name with score gained by him/her.
+ *   The function observes the Boolean value of the bool compare_score (int user_score); which generates true if highest score is achieved or false if user achieves comparatively lower score. 
+ *   If bool compare_score (int user_score) generates true, then file will be updated by the new data base (new high score and user name who achieved it). 
+ *   If bool compare_score (int user_score) generates false, then file will not be updated. 
+ *   If function overrides the file with new data, then it returns true, else it is false.
+ */
+
+
+bool updatetextfile (int user_score, char* user_name) {
+
+    /*! \brief Comparing the current score with maximum score through function
+     */
+    bool result;
+ 	result = compare_score(user_score);
+    if(result) {
+		/*! \brief Updating the score as the current score is maximum
+			*/
+		FILE *fpw;
+		fpw = fopen("../data/maximum.txt", "w");
+        char score_string[5];
+        sprintf(score_string, "%d", user_score);
+        char result_string[100];
+        strcpy(result_string, user_name);
+        strcat(result_string, ",");
+        strcat(result_string,score_string);
+        if (fpw== NULL){
+            puts("Issue in opening the Output file");
+        }
+        fputs(result_string, fpw);
+        fclose(fpw);
+        return true;
+    }   else {
+        return false;
+    }
+}
+
+
 /**
 * @author Parth Patel
 * \fn bool compare_score(int user_score, int highest_score)
 * @param[in] int user_score achieved by the user in current quiz game in terms of the integer.
 * @param[in] int highest_score ever scored in the game in terms of integer.
 * @return Boolean true if user_score is greater than highest_score else false
-* @brief   	The function compares user_score with the existed highest_score stored in the text file.
+* @brief  The function compares user_score with the existed highest_score stored in the text file.
  	* The function will return true if highest_score needs to be updated for current user else it will return false if not needed. 
  	* If there is no highest score stored in the text file, the function updateTextFile will generate a new text file named highest_score.
 	 
@@ -287,13 +340,13 @@ bool compare_score(){
 
 	FILE *infile; 
 
-	infile = fopen("C:\\Users\\prthp\\OneDrive\\Documents\\file1.txt", "r");       
+	infile = fopen("../data/maximum.txt", "r");       
 	/* relative path for file */
 
 	if ( infile == NULL ) {  
 	/* error checking with fopen call */
     printf("Unable to open file."); 
-    exit(1);
+    return true;
 	} 
 
 	char outstream[255];
@@ -338,14 +391,11 @@ bool compare_score(){
 
 /**
 * @author Parth Patel
-* @brief   	The function display the highest score user recorded in the system.
+* @brief  The function display the highest score user recorded in the system.
  	
 	 */ 
-
-void display_score()
-{
+void display_score(){
 	system("cls");
-	
 	printf("\n\n\t\t*************************************************************");
 	printf("\n\n\t\t Secured Highest Score is %d",highest_score);
 	printf("\n\n\t\t*************************************************************");
@@ -355,9 +405,41 @@ void display_score()
 /**
 * @author Parth Patel
 * @brief   	The function terminate all the ongoing process and exit.
- 	
 	 */ 
-void quit()
-{
+void quit(){
 	exit(1);
+}
+
+/**
+ * @author Hitul Shah
+ * \fn void reset_score()
+ * @brief 	The function will reset the maximum.txt file with 0 score.
+ */
+void reset_score(){
+	system("cls")
+	FILE *f;
+	f=fopen("../data/maximum.txt","w");
+	char reset_string = 'reset,0';
+ 	fputs(reset_string, f);
+    fclose(f);
+	}
+
+/** 
+ * @author Hitul Shah
+ * \fn void help()
+ * @brief The function will provide the basic informations and the rules of the quiz game to the player.
+ */
+void help(){
+	system("cls");
+    printf("\n\n                      HELP");
+    printf("\n -------------------------------------------------------------------------");
+    printf("\n ................Quick Quiz Game...........");
+    printf("\n ----> There are ten questions in the game");
+    printf("\n ----> You can earn one point for each correct answer");
+    printf("\n ----> Maximum 10 seconds are given for each question ");
+	printf("\n ----> You will be given 4 options and you have to press A, B ,C or D for ");
+    printf("\n       the right option");
+    printf("\n ----> You will be asked questions continuously even if your answer is incorrect.");
+    printf("\n ----> There are no negative markings for wrong answers");
+	printf("\n\n\t**************Good LUCK**************");
 }
