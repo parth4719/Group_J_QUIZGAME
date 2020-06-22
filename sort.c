@@ -19,10 +19,12 @@
 
 /* Function declaration*/
 
+void displayquiz();
 void swap(int *a, int *b);
 void randomize(int arr[], int n);
-int calculatescore(char userinput[]);
 void startquiz();
+void Timer();
+int calculatescore(char userinput[]);
 bool compare_score();
 void display_score();
 void quit();
@@ -142,19 +144,61 @@ int main() {
 		    goto mainhome;   
 	
     case 'S':
-        system("cls");
+    	startquiz();
+        user_score = calculatescore(userinput);
+			
+		}
+		
+	 	if(updatetextfile(user_score,playername) == true){
+	 		printf("\nYour score is : %d",user_score );
+			printf("\n Congratulations your score is the 'New highest score'");
+		}
+		else{
+			printf("\n Your score is : %d",user_score );
+			printf("\n Sorry! your score is not highest score");
+		}
+    return 0;
+}
+
+/**
+* @brief Function will start the quiz.
+* @author Vimil Rathod
+* This Function is used to start the quiz
+* This Function will launch the quiz by display each question and respective options for a limited time of 10 seconds, if the user doesn't answer the respective question then the control will be skipped to the next question
+* @param[in] No input parameters
+* @Return No return value
+*
+*/
+
+void startquiz(){
+	
+	    system("cls");
 		printf("\n\n\n\n\n\n\n\n\n\n\t\t\tEnter your name:");
 		gets(playername);
-		
 		system("cls");
-		int i;
+		
+		Timer();
+		        
+}
+
+
+/**
+* @brief Function will incorporate a timer of 10 seconds during each question of the quiz
+* @author Vimil Rathod
+* This Function is used to limit the amount of time given to a user to solve a question to 10 seconds
+* @param[in] No input parameters
+* @Return No return value
+*
+*/
+
+void Timer(){
+	    int i;
 		for (i=0; i<reccount-1; i++) {
         	
         		int index = arr[i];
-        		char Answer;
         		int count=10;
         		
-        		// All Questions and four option will be printed
+        		// All Questions and four option will be printed, one a time with a timer of 10 seconds
                 while(count>0&&_kbhit()==0)
                 {
                 	printf("\n\n");
@@ -184,30 +228,14 @@ int main() {
                 system("cls");
             
             }
-            
-         user_score = calculatescore(userinput);
-			
-		}
-	 	if(updatetextfile(user_score,playername) == true){
-
-			printf("\n Congratulations your score is highest score");
-			printf("\nYour score is : %d",user_score );
-		}
-		else{
-			printf("\n Your score is : %d",user_score );
-			printf("\n Sorry! your score is not highest score");
-		}
-    return 0;
 }
 
-
 /**
-* @brief Function calculate user score.
+* @brief Function will calculate user's final score.
 * @author Vimil Rathod
-* The function use to calculate score based on user answer given at time of quiz
-* Function will match all the given answer with the correct answer stored in excel file  
-* @param[in] char userinput[], array of chracter that has value given by the user
-* @param[in] pointer to second array element
+* This function is used to calculate user's final score based on user's answers to individual questions provided at the time of the quiz
+* Function will compare all the given answers with the correct answers stored in the excel file  
+* @param[in] char userinput[], array of chracter that has values given by the user
 * @Return int value of total score of the user
 *
 */
@@ -414,11 +442,11 @@ void help(){
     printf("\n ................Quick Quiz Game...........");
     printf("\n ----> There are ten questions in the game");
     printf("\n ----> You can earn one point for each correct answer");
-    printf("\n ----> Maximum 10 seconds are given for each question ");
+    printf("\n ----> Maximum of 10 seconds are given for each question ");
 	printf("\n ----> You will be given 4 options and you have to press A, B ,C or D for ");
     printf("\n       the right option");
     printf("\n ----> You will be asked questions continuously even if your answer is incorrect.");
-    printf("\n ----> There are no negative markings for wrong answers");
+    printf("\n ----> There is no negative marking for wrong answers");
 	printf("\n\n\t**************Good LUCK**************");
 }
 
