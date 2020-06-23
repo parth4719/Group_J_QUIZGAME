@@ -1,0 +1,25 @@
+*********************************TEST 1 for Excel data**********************************************
+We are first going to conduct test by not giving file name 
+Expected result it will give error message for the same 
+ ****Test Fail*****
+
+*********************************TEST 2 for Excel data**********************************************
+We are going to conduct test by giving different file name 
+Expected result it will give error message for the file not found 
+ ****Test Fail*****
+
+*********************************TEST 3 for Excel data**********************************************
+We are going to conduct test by giving different file format 
+Expected result it will give error message for the file not found 
+ ****Test Fail*****
+
+*********************************TEST 4 for Excel data**********************************************
+We are going to conduct test by giving different coloumn name in csv file 
+Expected result it will give error message for the incorrect data format 
+ ****Test Fail*****
+
+*********************************TEST 5 for Excel data**********************************************
+We are going to conduct test by giving correct data in csv file 
+Expected result it will run successfully 
+ ****Test Pass*****
+
