@@ -90,8 +90,10 @@ int main() {
 	 	
 	switch(choice){
     default:
-        printf("Wrong Entry!!");
-        printf("Press any key and re-enter correct option");
+        printf("\n\nWrong Entry!!!\n");
+        printf("Please re-enter the correct option");
+        sleep(5);
+        goto mainhome;
     case 'Q':
         quit();
 	case 'H':
