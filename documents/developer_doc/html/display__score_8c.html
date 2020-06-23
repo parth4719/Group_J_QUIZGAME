@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GROUP_J_QUIZGAME: This program is designed to extracts data from excel that is in csv format - comma seperated and based on the data retrieved from the file which will be further seperated and stored in array of structure and this data will be used to do further funcionality in the quiz, i.e., calcuate_score, compare_score, reset_score, timer, help, display_score, etc and at the end of the quiz, it generates highest score with the name of the player in the output text file.</title>
+<title>GROUP_J_QUIZGAME: src/display_score.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,7 +45,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,14 +59,57 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">This program is designed to extracts data from excel that is in csv format - comma seperated and based on the data retrieved from the file which will be further seperated and stored in array of structure and this data will be used to do further funcionality in the quiz, i.e., calcuate_score, compare_score, reset_score, timer, help, display_score, etc and at the end of the quiz, it generates highest score with the name of the player in the output text file. </div>  </div>
+<div class="title">display_score.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Input file is a .csv containing data of the quiz. File contains the questions and their corresponding answers of the quiz. Output file contains the data of the player name and the highest score achieved among all players. <br  />
- </p>
-</div></div><!-- PageDoc -->
+
+<p>The function display the highest score user recorded in the system.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;conio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;..\include\display_score.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa4271c3b184603eb85b5fae294942b74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display__score_8c.html#aa4271c3b184603eb85b5fae294942b74">display_score</a> ()</td></tr>
+<tr class="memdesc:aa4271c3b184603eb85b5fae294942b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function display the highest score user recorded in the system.  <a href="display__score_8c.html#aa4271c3b184603eb85b5fae294942b74">More...</a><br /></td></tr>
+<tr class="separator:aa4271c3b184603eb85b5fae294942b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The function display the highest score user recorded in the system. </p>
+<dl class="section author"><dt>Author</dt><dd>Parth Patel </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="aa4271c3b184603eb85b5fae294942b74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4271c3b184603eb85b5fae294942b74">&#9670;&nbsp;</a></span>display_score()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_score </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function display the highest score user recorded in the system. </p>
+<dl class="section author"><dt>Author</dt><dd>Parth Patel </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

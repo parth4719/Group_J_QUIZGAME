@@ -1,0 +1,52 @@
+\hypertarget{calculatescore_8c}{}\doxysection{src/calculatescore.c File Reference}
+\label{calculatescore_8c}\index{src/calculatescore.c@{src/calculatescore.c}}
+
+
+Calculates the final score.  
+
+
+{\ttfamily \#include \char`\"{}..\textbackslash{}include\textbackslash{}calculatescore.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{calculatescore_8c_a737d3a04bc473d26191dbd925d3dc22f}{calculatescore}} (char userinput\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function will calculate user\textquotesingle{}s final score. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Calculates the final score. 
+
+\begin{DoxyAuthor}{Author}
+Vimil Rathod 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22 June 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{calculatescore_8c_a737d3a04bc473d26191dbd925d3dc22f}\label{calculatescore_8c_a737d3a04bc473d26191dbd925d3dc22f}} 
+\index{calculatescore.c@{calculatescore.c}!calculatescore@{calculatescore}}
+\index{calculatescore@{calculatescore}!calculatescore.c@{calculatescore.c}}
+\doxysubsubsection{\texorpdfstring{calculatescore()}{calculatescore()}}
+{\footnotesize\ttfamily int calculatescore (\begin{DoxyParamCaption}\item[{char}]{userinput\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Function will calculate user\textquotesingle{}s final score. 
+
+\begin{DoxyAuthor}{Author}
+Vimil Rathod This function is used to calculate user\textquotesingle{}s final score based on user\textquotesingle{}s answers to individual questions provided at the time of the quiz Function will compare all the given answers with the correct answers stored in the excel file ~\newline
+ 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em char} & userinput\mbox{[}\mbox{]}, array of chracters containing answers provided by the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Value of total score of the user 
+\end{DoxyReturn}

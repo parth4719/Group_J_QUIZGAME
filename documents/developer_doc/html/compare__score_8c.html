@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GROUP_J_QUIZGAME: This program is designed to extracts data from excel that is in csv format - comma seperated and based on the data retrieved from the file which will be further seperated and stored in array of structure and this data will be used to do further funcionality in the quiz, i.e., calcuate_score, compare_score, reset_score, timer, help, display_score, etc and at the end of the quiz, it generates highest score with the name of the player in the output text file.</title>
+<title>GROUP_J_QUIZGAME: src/compare_score.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,7 +45,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,14 +59,53 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">This program is designed to extracts data from excel that is in csv format - comma seperated and based on the data retrieved from the file which will be further seperated and stored in array of structure and this data will be used to do further funcionality in the quiz, i.e., calcuate_score, compare_score, reset_score, timer, help, display_score, etc and at the end of the quiz, it generates highest score with the name of the player in the output text file. </div>  </div>
+<div class="title">compare_score.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Input file is a .csv containing data of the quiz. File contains the questions and their corresponding answers of the quiz. Output file contains the data of the player name and the highest score achieved among all players. <br  />
- </p>
-</div></div><!-- PageDoc -->
+
+<p>The function compares user_score with the existed highest_score stored in the text file.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;../include/compare_score.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a7678a6a0d9908a9a1d25ab7c245bddfd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compare__score_8c.html#a7678a6a0d9908a9a1d25ab7c245bddfd">compare_score</a> (int <a class="el" href="main_8c.html#a44bb5128fa319afbf8e53a0938f62d47">user_score</a>)</td></tr>
+<tr class="separator:a7678a6a0d9908a9a1d25ab7c245bddfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The function compares user_score with the existed highest_score stored in the text file. </p>
+<dl class="section author"><dt>Author</dt><dd>Parth Patel </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a7678a6a0d9908a9a1d25ab7c245bddfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7678a6a0d9908a9a1d25ab7c245bddfd">&#9670;&nbsp;</a></span>compare_score()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool compare_score </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>user_score</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
