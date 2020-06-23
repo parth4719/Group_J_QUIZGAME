@@ -1,4 +1,9 @@
 /**
+* @file compare_score.c 
+* @author Parth Patel
+* @brief  The function compares user_score with the existed highest_score stored in the text file.
+*/
+/**
 * @author Parth Patel
 * \fn bool compare_score(int user_score, int highest_score)
 * @param[in] int user_score achieved by the user in current quiz game in terms of the integer.
@@ -7,8 +12,7 @@
 * @brief  The function compares user_score with the existed highest_score stored in the text file.
  	* The function will return true if highest_score needs to be updated for current user else it will return false if not needed. 
  	* If there is no highest score stored in the text file, the function updateTextFile will generate a new text file named highest_score.
-	 
-	 */ 
+    */ 
 
 #include <stdbool.h>
 #include <string.h>

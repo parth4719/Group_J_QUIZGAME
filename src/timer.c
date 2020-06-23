@@ -15,7 +15,7 @@
 * @author Vimil Rathod
 * This Function is used to limit the amount of time given to a user to solve a question to 10 seconds
 * @param[in] No input parameters
-* @Return No return value
+* @return No return value
 *
 */
 

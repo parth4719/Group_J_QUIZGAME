@@ -1,13 +1,15 @@
 /**
-* \file main.c
-*
-* Contains the main function from which different functions
-* located in other files are called to perform different
-* tasks excel based on the
-* user inputs.
-*
+ * @file main.c
+ * @author Pavan Patel
+ * @author Vimil Rathod
+ * @author Hitul Shah
+ * @author Parth Patel
+ * @brief Processing of input file, calling different functions from other files to perform the different 
+ tasks to compute output(score) and storing data in output file.
+ * \mainpage This program is designed to extracts data from excel that is in csv format - comma seperated and based on the data retrieved from the file which will be further seperated and stored in array of structure and this data will be used to do further funcionality in the quiz, i.e., calcuate_score, compare_score, reset_score, timer, help, display_score, etc and at the end of the quiz, it generates highest score with the name of the player in the output text file. 
+ * Input file is a .csv containing data of the quiz. File contains the questions and their corresponding answers of the quiz.
+ * Output file contains the data of the player name and the highest score achieved among all players.    
 */
-
 
 #include<windows.h>
 #include <stdio.h>
@@ -17,6 +19,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 
+/* Include all dependencies */
 
 #include "include\startquiz.h"
 #include "src\startquiz.c"

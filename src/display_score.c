@@ -1,14 +1,18 @@
+/**
+* @file display_score.c
+* @author Parth Patel
+* @brief  The function display the highest score user recorded in the system.
+*/ 
+/**
+* @fn void display_score()
+* @author Parth Patel
+* @brief  The function display the highest score user recorded in the system.
+*/
 #include <stdio.h>
 #include <conio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "..\include\display_score.h"
-
-/**
-* @author Parth Patel
-* @brief  The function display the highest score user recorded in the system.
- 	
-*/ 
+#include "..\include\display_score.h" 
 	 
 void display_score(){
 	FILE *infile;

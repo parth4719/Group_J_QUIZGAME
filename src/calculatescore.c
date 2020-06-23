@@ -16,7 +16,7 @@
 * This function is used to calculate user's final score based on user's answers to individual questions provided at the time of the quiz
 * Function will compare all the given answers with the correct answers stored in the excel file  
 * @param[in] char userinput[], array of chracters containing answers provided by the user
-* @Return int Value of total score of the user
+* @return int Value of total score of the user
 *
 */
 

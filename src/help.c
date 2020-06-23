@@ -1,8 +1,15 @@
 
 /** 
+ * @file help.c
  * @author Hitul Shah
+ * @brief The function will provide the basic informations and the rules of the quiz game.
+ */
+/**
  * \fn void help()
- * @brief The function will provide the basic informations and the rules of the quiz game to the player.
+ * @author Hitul Shah
+ * @brief The function gives the informations like, number of options and earing points per question in the quiz.
+ * @param[in] void
+ * @return void
  */
  
 #include "..\include\help.h"

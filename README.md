@@ -12,7 +12,7 @@ This quiz game application is used to test the general knowledge of the player. 
 
 ---
 
-### Dependancies
+### Dependencies
 
 - Dev-C++ (IDE)
 - Cygwin (IDE)
