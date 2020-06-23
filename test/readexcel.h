@@ -1,32 +1,25 @@
-/** 
- * @file readexcel.c
- * @author Pavan Patel
- * @date 22 June 2020
- * @brief Read Excel data.
- */
 
-#include "..\include\timer.h"
-#include "..\include\readexcel.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-/**
-* @brief Function will be able to get data from comma seperated csv file
-* @author Pavan Patel
-* Based on the data retrieved from the file it will be further seperated and stored in array of structure.
-* and this data will be used further in quiz.
-* @param[in] No input parameters
-* @return No return value
-*
-*/
 
-void readexcel(){
+int readexcel(){
 	FILE * filehandle;
 	char lyne[121];
 	char *item;
-	char filename[100] = "Book.csv";
+	char filename[100] = "testbook.csv";
+	/* Define a structure */
+        typedef struct {
+                char que[1000]; 
+				char opt1[100]; 
+                char opt2[100]; 
+				char opt3[100];
+				char opt4[100];
+				char ans[100];
+        } data ;
 
+        data record[300];
+        
+	int reccount = 0;
+	int arr[] = {};
 	
 	
 	if (filename[0]){
@@ -38,9 +31,10 @@ void readexcel(){
 		if ( filehandle == NULL ) { 
 		 
 			/* error checking with fopen call */
-    		printf("Data File with given name not found"); 
+    		//printf("Data File with given name not found"); 
+    		return 0; 
     		exit(0);
-    	 
+    		
 		} 
 		else{
 		
@@ -55,9 +49,8 @@ void readexcel(){
                 			strcpy(record[reccount].que,item);
 						}
 						else{
-							printf("Incorrect data format");
-						 exit(0);
-						
+							//printf("Incorrect data format");
+							return 0;  
 						}
 						
 						item = strtok(NULL,",");
@@ -65,8 +58,8 @@ void readexcel(){
                 			 strcpy(record[reccount].opt1,item);
 						}
 						else{
-							printf("Incorrect data format");
-							 exit(0); 
+							//printf("Incorrect data format");
+							return 0;  
 						}
 						
 						item = strtok(NULL,",");
@@ -74,8 +67,8 @@ void readexcel(){
                 			 strcpy(record[reccount].opt2,item);
 						}
 						else{
-							printf("Incorrect data format");
-							  exit(0);
+							//printf("Incorrect data format");
+							return 0;  
 						}
 						
 						item = strtok(NULL,",");
@@ -83,8 +76,8 @@ void readexcel(){
                 			 strcpy(record[reccount].opt3,item);
 						}
 						else{
-							printf("Incorrect data format"); 
-							exit(0); 
+							//printf("Incorrect data format"); 
+							return 0; 
 						}
 						
 						item = strtok(NULL,",");
@@ -92,8 +85,8 @@ void readexcel(){
                 			 strcpy(record[reccount].opt4,item);
 						}
 						else{
-							printf("Incorrect data format \n"); 
-						 exit(0);
+							//printf("Incorrect data format \n"); 
+							return 0; 
 						}
 						
 						item = strtok(NULL,"\n");
@@ -102,8 +95,8 @@ void readexcel(){
                 			 strcpy(record[reccount].ans,item);
 						}
 						else{
-							printf("Incorrect data format \n");
-								 exit(0);
+							//printf("Incorrect data format \n");
+								return 0; 
 						}
 
                 	reccount++;
@@ -138,15 +131,18 @@ void readexcel(){
         /* Close file */
 
         fclose(filehandle);
-        
+    	
         
 	}
 	else{
 			/* error checking null file name */
-    		printf("Please provide name of the data  file"); 
+    		//printf("Please provide name of the data  file"); 
+    		return 0; 
     		exit(0);
-    		
 	}
-        
+    return 1;    
 	
 }
+
+
+
