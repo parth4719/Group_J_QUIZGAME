@@ -1,13 +1,15 @@
 /**
-* \file main.c
-*
-* Contains the main function from which different functions
-* located in other files are called to perform different
-* tasks excel based on the
-* user inputs.
-*
+ * @file main.c
+ * @author Pavan Patel
+ * @author Vimil Rathod
+ * @author Hitul Shah
+ * @author Parth Patel
+ * @brief Processing of input file, calling different functions from other files to perform the different 
+ tasks to compute output(score) and storing data in output file.
+ * \mainpage This program is designed to extracts data from excel that is in csv format - comma seperated and based on the data retrieved from the file which will be further seperated and stored in array of structure and this data will be used to do further funcionality in the quiz, i.e., calcuate_score, compare_score, reset_score, timer, help, display_score, etc and at the end of the quiz, it generates highest score with the name of the player in the output text file. 
+ * Input file is a .csv containing data of the quiz. File contains the questions and their corresponding answers of the quiz.
+ * Output file contains the data of the player name and the highest score achieved among all players.    
 */
-
 
 #include<windows.h>
 #include <stdio.h>
@@ -17,7 +19,10 @@
 #include <ctype.h>
 #include <stdbool.h>
 
+/* Include all dependencies */
 
+#include "include\readexcel.h"
+#include "src\readexcel.c"
 #include "include\startquiz.h"
 #include "src\startquiz.c"
 #include "include\calculatescore.h"
@@ -44,9 +49,7 @@
 
 /* Variable declaration*/
 
-FILE * filehandle;
-char lyne[121];
-char *item;
+
 char choice;
 int user_score;
 
@@ -60,48 +63,11 @@ int main() {
 * @author Vimil Rathod
 * @author Hitul Shah
 * @author Parth Patel
-* @Extract data from excel that is in csv format - comma seperated
-* Based on the data retrieved from the file it will be further seperated and stored in array of structure.
-* and this data will be used further in quiz.
 *
 */
-	
-        /* Abstracting data from the excel file */
-        /* open file */
-
-        filehandle = fopen("Book.csv","r");
-
-        /* Read file line by line */
-
-        while (fgets(lyne,1200,filehandle)) {
-                printf("%s \n",lyne);
-
-                item = strtok(lyne,",");
-                strcpy(record[reccount].que,item);
-
-                item = strtok(NULL,",");
-                strcpy(record[reccount].opt1,item);
-
-                item = strtok(NULL,",");
-                strcpy(record[reccount].opt2,item);
-
-                item = strtok(NULL,",");
-                strcpy(record[reccount].opt3,item);
+		readexcel();
                 
-                item = strtok(NULL,",");
-                strcpy(record[reccount].opt4,item);
-                
-                item = strtok(NULL,"\n");
-                strcpy(record[reccount].ans,item);
-
-                reccount++;
-                }
-
-        /* Close file */
-
-        fclose(filehandle);
-        
-        //Removing header element of excel store at index1
+        //Removing header element of excel data  store in array of structure at index1
         int c;
         for (c = 0; c < reccount - 1; c++)
         record[c] = record[c+1];
@@ -115,44 +81,39 @@ int main() {
 	 	randomize (arr, n);
 	 	
 	 	mainhome:
-	 	//Main Menu
+	 	//Displaying the quiz
 	 	displayquiz();
 	 	
+	 	//Getting user input
 	 	choice=toupper(getch());
+	 	
+	 	
 	switch(choice){
     default:
-    	//Validation
-    	//Raising Error for wrong input
         printf("Wrong Entry!!");
         printf("Press any key and re-enter correct option");
     case 'Q':
-    	//Quit the quiz
         quit();
 	case 'H':
-		//Help for gaining general information about the quiz
         help();
 		getch();
 		goto mainhome;
     case 'R':
-    	//To reset the highest score of the quiz
         reset_score();
         getch();
 		goto mainhome;
 
     case 'V':
-    	//To view the highest score of the quiz
         display_score();
         getch();
 		goto mainhome;   
 	
     case 'S':
-    	//Launching the quiz
     	startquiz();
-    	//Calculating user's total score
         user_score = calculatescore(userinput);
 			
 		}
-		// Comaparing with the highest score to find out if we have a new highest score or not
+		
 	 	if(updatetextfile(user_score,playername) == true){
 	 		highest_score = user_score;
 			printf("\n Your score is : %d",user_score );
@@ -163,5 +124,6 @@ int main() {
 			printf("\n Unfortunately, your score is not the highest score!");
 			sleep(5);
 		}
+		
     return 0;
 }

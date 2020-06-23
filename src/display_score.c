@@ -39,7 +39,7 @@ void display_score(){
 	int highest_score= atoi(newString[1]);
 	system("cls");
 	printf("\n\n\t\t*************************************************************");
-	printf("\n\n\t\t                      Highest Score is %d",highest_score);
+	printf("\n\n\t\t      Highest Score recorded is %d by %s",highest_score,newString[0]);
 	printf("\n\n\t\t*************************************************************");
 	printf("\n\n\n\n\n\n\n\n\t\tPress any Key to return to the main menu of the game");
 }
