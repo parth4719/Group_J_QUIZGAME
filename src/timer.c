@@ -24,8 +24,9 @@ void Timer(){
 		for (i=0; i<reccount-1; i++) {
         	
         		int index = arr[i];
-        		int count=10;
+        		int count=30;
         		
+        		timer:
         		// All Questions and four option will be printed, one a time with a timer of 10 seconds
                 while(count>0&&_kbhit()==0)
                 {
@@ -50,7 +51,25 @@ void Timer(){
 					{
 						// user input
 						char temp= toupper(getch());
-						userinput[i] = temp;
+						if ((temp == 65)||(temp == 66)||(temp == 67)||(temp == 68)){
+							userinput[i] = temp;
+						}
+						else
+						{
+							printf("\n\n");
+                	        printf(" %d]\n\n",i+1);
+                	        printf(" Question:  %s\n\n",record[index].que);
+                	        printf(" Options:   A.%s",record[index].opt1);
+                	        printf("  B.%s",record[index].opt2);
+                	        printf("  C.%s",record[index].opt3);
+                	        printf("  D.%s",record[index].opt4);
+                	        printf("\n\n\n\n Time Remaining: %d\t",count);
+							printf("\n\n\nPlease select from the given options only");
+							sleep(1);
+							system("cls");
+							goto timer;
+						}
+						
 					}
 
                 system("cls");
