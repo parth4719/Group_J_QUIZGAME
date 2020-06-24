@@ -27,6 +27,12 @@ void startquiz(){
 	    system("cls");
 		printf("\n\n\n\n\n\n\n\n\n\n\t\t\tEnter your name:");
 		gets(playername);
+		//Testing Validation
+		if (strlen(playername)>10){
+			printf("Player's Name cannot be longer than 10 characters");
+			sleep(3);
+			exit(1);
+		}
 		system("cls");
 		
 		Timer();

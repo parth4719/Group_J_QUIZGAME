@@ -1,3 +1,4 @@
+
 *********************************TEST 1 for Excel data**********************************************
 We are first going to conduct test by not giving file name 
 Expected result it will give error message for the same 
@@ -22,4 +23,29 @@ Expected result it will give error message for the incorrect data format
 We are going to conduct test by giving correct data in csv file 
 Expected result it will run successfully 
  ****Test Pass*****
+
+*********************************TEST 6 for Update text File**********************************************
+We are testing data by not giving username 
+Expected result it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 7 for Update text File**********************************************
+We are testing data by not giving userscore 
+Expected result it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 8 for Update text File**********************************************
+We are testing data by by providing all correct information 
+Expected result it will run successfully 
+ ****Test Pass*****
+
+*********************************TEST 9 for Compare score**********************************************
+We are testing data by not providing user score 
+Expected result it will provide error message 
+ ****Test Pass*****
+
+*********************************TEST 10 for Compare score**********************************************
+We are testing data by giving all needed information 
+Expected result it will work properly 
+ ****Test Fail*****
 

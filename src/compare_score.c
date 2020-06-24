@@ -21,6 +21,9 @@
 
 
 bool compare_score(int user_score){
+	
+	if(user_score != ""){
+	
 
 	FILE *infile; 
 
@@ -28,11 +31,12 @@ bool compare_score(int user_score){
 	/* relative path for file */
 
 	if ( infile == NULL ) {  
-	/* error checking with fopen call */
-    //printf("Parth : Unable to open file."); 
+	
     return true;
-	} 
-
+	}
+	
+	else{
+		
 	char outstream[255];
 
 	fscanf(infile, "%s", outstream); 
@@ -43,8 +47,9 @@ bool compare_score(int user_score){
 	char newString[10][10]; 
 	
 	/* seperate two string. */
- 
-	for(i=0;i<=(strlen(outstream));i++){
+	
+	
+		for(i=0;i<=(strlen(outstream));i++){
     /* if space or NULL found, assign NULL into newString[ctr] */
     if(outstream[i]==','||outstream[i]=='\0'){
         newString[ctr][j]='\0';
@@ -61,14 +66,31 @@ bool compare_score(int user_score){
 
 	/* convert highest score string value into integer value.*/
     
-	highest_score= atoi(newString[1]);
-  
-	/* compare highest score with current user socre. return true if user score is higher than highest score else false. */
+	 highest_score= atoi(newString[1]);
+	
+
+			/* compare highest score with current user socre. return true if user score is higher than highest score else false. */
     
-	if(highest_score > user_score){
-		return false;
+		if(highest_score > user_score){
+			return false;
+		}
+		else{
+			return true;
+		}
+	
+  
+
 	}
+
+ 
+	
+
+	} 
+	
 	else{
-		return true;
+		printf("\n User score missing at time of compare score !! ");
+		exit(0);
 	}
 }
+
+

@@ -1,12 +1,14 @@
-
 #include<windows.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <conio.h>
+#include <ctype.h>
 #include <stdbool.h>
 
 #include "readexcel.h"
 #include "updatetxtfile.h"
+#include "comparescore.h"
 
 int main(){
 	
@@ -113,6 +115,34 @@ int main(){
         fprintf(fp,"Expected result it will run successfully \n ");
         
 		val = updatetextfile("8","hitul");
+		
+		if(val == 1){
+			
+			fprintf(fp,"****Test Pass*****\n\n");
+		}
+		else{
+			fprintf(fp,"****Test Fail*****\n\n");
+		}
+		
+		fprintf(fp,"*********************************TEST 9 for Compare score**********************************************\n");
+        fprintf(fp,"We are testing data by not providing user score \n");
+        fprintf(fp,"Expected result it will provide error message \n ");
+        
+		val = compare_score("");
+		
+		if(val == 0){
+			
+			fprintf(fp,"****Test Pass*****\n\n");
+		}
+		else{
+			fprintf(fp,"****Test Fail*****\n\n");
+		}
+		
+		fprintf(fp,"*********************************TEST 10 for Compare score**********************************************\n");
+        fprintf(fp,"We are testing data by giving all needed information \n");
+        fprintf(fp,"Expected result it will work properly \n ");
+        
+		val = compare_score(3);
 		
 		if(val == 1){
 			
