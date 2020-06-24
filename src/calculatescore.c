@@ -22,6 +22,31 @@
 
 
 int calculatescore(char userinput[]){
+	        //Testing Validation
+	        //printf("%d",strlen(userinput));
+	        int q_size = reccount-1;
+	        if (userinput == 0){
+	        	printf("User Input array cannot be empty");
+				sleep(3);
+				exit(1);
+			}
+			if (q_size == 0){
+				printf("questions array cannot be empty");
+				sleep(3);
+				exit(1);
+			}
+			if (strlen(userinput) == 0){
+	        	printf("The length of User Input array cannot be zero");
+				sleep(3);
+				exit(1);
+			}
+	        if (strlen(userinput) != q_size){
+	        	printf("The lengths of both the arrays should be equal");
+				sleep(3);
+				exit(1);
+			}
+			
+			//Function Implementation
 			int t;
 			int count = 0;
             for (t=0; t<reccount-1; t++){

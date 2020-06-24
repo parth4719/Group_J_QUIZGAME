@@ -49,13 +49,15 @@ void Timer(){
 					}
 					else
 					{
-						// user input
+						// user input testing validation
+						// If user inputs A or B or C or D
 						char temp= toupper(getch());
 						if ((temp == 65)||(temp == 66)||(temp == 67)||(temp == 68)){
 							userinput[i] = temp;
 						}
 						else
 						{
+						// If user inputs any other charcter or integer or special characters	
 							printf("\n\n");
                 	        printf(" %d]\n\n",i+1);
                 	        printf(" Question:  %s\n\n",record[index].que);
