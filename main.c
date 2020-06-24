@@ -124,7 +124,7 @@ int main() {
 		else{
 			printf("\n Your score is : %d",user_score );
 			printf("\n Unfortunately, your score is not the highest score!");
-			sleep(5);
+			sleep(10);
 		}
 		
     return 0;
