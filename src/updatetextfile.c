@@ -29,25 +29,51 @@ bool updatetextfile (int user_score, char* user_name) {
     /*! \brief Comparing the current score with maximum score through function
      */
     bool result;
- 	result = compare_score(user_score);
-    if(result) {
-		/*! \brief Updating the score as the current score is maximum
-			*/
-		FILE *fpw;
-		fpw = fopen("data\\maximum.txt", "w");
-        char score_string[5];
-        sprintf(score_string, "%d", user_score);
-        char result_string[100];
-        strcpy(result_string, user_name);
-        strcat(result_string, ",");
-        strcat(result_string,score_string);
-        if (fpw== NULL){
-            puts("Issue in opening the Output file");
-        }
-        fputs(result_string, fpw);
-        fclose(fpw);
-        return true;
-    }   else {
-        return false;
-    }
+    char score_string[5];
+    if(user_score != ""){
+    	if(user_name != ""){
+    		
+    		
+    			result = compare_score(user_score);
+    			
+    			
+    			if(result) {
+				
+		
+				FILE *fpw;
+				fpw = fopen("data\\maximum.txt", "w");
+				if (fpw== NULL){
+            		printf("Issue in opening the Output file");
+            		exit(0);
+        		}
+        		
+        		sprintf(score_string, "%d", user_score);
+        		char result_string[100];
+        		strcpy(result_string, user_name);
+        		strcat(result_string, ",");
+        		strcat(result_string,score_string);
+        		
+        		fputs(result_string, fpw);
+        		fclose(fpw);
+        		return true;
+    			}   
+				else {
+        			return false;
+    			}	
+		}
+		else{
+			printf("Username missing while updating text !!");
+			
+			exit(0);
+		}
+		
+	}
+	else{
+				printf("User Score missing while updating text !!");
+				
+				exit(0);
+		}
+ 
 }
+
+

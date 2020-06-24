@@ -3,11 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <conio.h>
-#include <ctype.h>
 #include <stdbool.h>
 
 #include "readexcel.h"
+#include "updatetxtfile.h"
 
 int main(){
 	
@@ -73,13 +72,54 @@ int main(){
         fprintf(fp,"Expected result it will run successfully \n ");
         
 		val = readexcel();
-		printf("%d",val);
 		if(val == 0){
 			
 			fprintf(fp,"****Test Fail*****\n\n");
 		}
 		else{
 			fprintf(fp,"****Test Pass*****\n\n");
+		}
+		
+		fprintf(fp,"*********************************TEST 6 for Update text File**********************************************\n");
+        fprintf(fp,"We are testing data by not giving username \n");
+        fprintf(fp,"Expected result it will give error message \n ");
+        
+		val = updatetextfile(2,"");
+		
+		if(val == 0){
+			
+			fprintf(fp,"****Test Pass*****\n\n");
+		}
+		else{
+			fprintf(fp,"****Test Fail*****\n\n");
+		}
+		
+		fprintf(fp,"*********************************TEST 7 for Update text File**********************************************\n");
+        fprintf(fp,"We are testing data by not giving userscore \n");
+        fprintf(fp,"Expected result it will give error message \n ");
+        
+		val = updatetextfile("","hitul");
+		
+		if(val == 0){
+			
+			fprintf(fp,"****Test Pass*****\n\n");
+		}
+		else{
+			fprintf(fp,"****Test Fail*****\n\n");
+		}
+		
+		fprintf(fp,"*********************************TEST 8 for Update text File**********************************************\n");
+        fprintf(fp,"We are testing data by by providing all correct information \n");
+        fprintf(fp,"Expected result it will run successfully \n ");
+        
+		val = updatetextfile("8","hitul");
+		
+		if(val == 1){
+			
+			fprintf(fp,"****Test Pass*****\n\n");
+		}
+		else{
+			fprintf(fp,"****Test Fail*****\n\n");
 		}
 	}	
 }
