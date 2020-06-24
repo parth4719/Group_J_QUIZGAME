@@ -1,23 +1,22 @@
-
 *********************************TEST 1 for Excel data**********************************************
 We are first going to conduct test by not giving file name 
 Expected result it will give error message for the same 
- ****Test Fail*****
+ ****Test Pass*****
 
 *********************************TEST 2 for Excel data**********************************************
 We are going to conduct test by giving different file name 
 Expected result it will give error message for the file not found 
- ****Test Fail*****
+ ****Test Pass*****
 
 *********************************TEST 3 for Excel data**********************************************
 We are going to conduct test by giving different file format 
 Expected result it will give error message for the file not found 
- ****Test Fail*****
+ ****Test Pass*****
 
 *********************************TEST 4 for Excel data**********************************************
 We are going to conduct test by giving different coloumn name in csv file 
 Expected result it will give error message for the incorrect data format 
- ****Test Fail*****
+ ****Test Pass*****
 
 *********************************TEST 5 for Excel data**********************************************
 We are going to conduct test by giving correct data in csv file 
@@ -47,5 +46,283 @@ Expected result it will provide error message
 *********************************TEST 10 for Compare score**********************************************
 We are testing data by giving all needed information 
 Expected result it will work properly 
- ****Test Fail*****
+ ****Test Pass*****
+
+*********************************TEST 11 for Calculate score**********************************************
+We are testing by considering an empty user input array 
+Expected result is it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 12 for Calculate score**********************************************
+We are testing by considering an input non zero array as given below
+Expected result is it will not give error message 
+ ****Test Pass*****
+
+*********************************TEST 1 for Excel data**********************************************
+We are first going to conduct test by not giving file name 
+Expected result it will give error message for the same 
+ ****Test Pass*****
+
+*********************************TEST 2 for Excel data**********************************************
+We are going to conduct test by giving different file name 
+Expected result it will give error message for the file not found 
+ ****Test Pass*****
+
+*********************************TEST 3 for Excel data**********************************************
+We are going to conduct test by giving different file format 
+Expected result it will give error message for the file not found 
+ ****Test Pass*****
+
+*********************************TEST 4 for Excel data**********************************************
+We are going to conduct test by giving different coloumn name in csv file 
+Expected result it will give error message for the incorrect data format 
+ ****Test Pass*****
+
+*********************************TEST 5 for Excel data**********************************************
+We are going to conduct test by giving correct data in csv file 
+Expected result it will run successfully 
+ ****Test Pass*****
+
+*********************************TEST 6 for Update text File**********************************************
+We are testing data by not giving username 
+Expected result it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 7 for Update text File**********************************************
+We are testing data by not giving userscore 
+Expected result it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 8 for Update text File**********************************************
+We are testing data by by providing all correct information 
+Expected result it will run successfully 
+ ****Test Pass*****
+
+*********************************TEST 9 for Compare score**********************************************
+We are testing data by not providing user score 
+Expected result it will provide error message 
+ ****Test Pass*****
+
+*********************************TEST 10 for Compare score**********************************************
+We are testing data by giving all needed information 
+Expected result it will work properly 
+ ****Test Pass*****
+
+*********************************TEST 11 for Calculate score**********************************************
+We are testing by considering an empty user input array 
+Expected result is it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 12 for Calculate score**********************************************
+We are testing by considering an input non zero array as given below
+Expected result is it will not give error message 
+ ****Test Pass*****
+
+*********************************TEST 13 for Start quiz**********************************************
+We are testing by considering an input player name greater than 10 char
+Expected result is it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 1 for Excel data**********************************************
+We are first going to conduct test by not giving file name 
+Expected result it will give error message for the same 
+ ****Test Pass*****
+
+*********************************TEST 2 for Excel data**********************************************
+We are going to conduct test by giving different file name 
+Expected result it will give error message for the file not found 
+ ****Test Pass*****
+
+*********************************TEST 3 for Excel data**********************************************
+We are going to conduct test by giving different file format 
+Expected result it will give error message for the file not found 
+ ****Test Pass*****
+
+*********************************TEST 4 for Excel data**********************************************
+We are going to conduct test by giving different coloumn name in csv file 
+Expected result it will give error message for the incorrect data format 
+ ****Test Pass*****
+
+*********************************TEST 5 for Excel data**********************************************
+We are going to conduct test by giving correct data in csv file 
+Expected result it will run successfully 
+ ****Test Pass*****
+
+*********************************TEST 6 for Update text File**********************************************
+We are testing data by not giving username 
+Expected result it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 7 for Update text File**********************************************
+We are testing data by not giving userscore 
+Expected result it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 8 for Update text File**********************************************
+We are testing data by by providing all correct information 
+Expected result it will run successfully 
+ ****Test Pass*****
+
+*********************************TEST 9 for Compare score**********************************************
+We are testing data by not providing user score 
+Expected result it will provide error message 
+ ****Test Pass*****
+
+*********************************TEST 10 for Compare score**********************************************
+We are testing data by giving all needed information 
+Expected result it will work properly 
+ ****Test Pass*****
+
+*********************************TEST 11 for Calculate score**********************************************
+We are testing by considering an empty user input array 
+Expected result is it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 12 for Calculate score**********************************************
+We are testing by considering an input non zero array as given below
+Expected result is it will not give error message 
+ ****Test Pass*****
+
+*********************************TEST 13 for Start quiz**********************************************
+We are testing by considering an input player name greater than 10 char
+Expected result is it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 1 for Excel data**********************************************
+We are first going to conduct test by not giving file name 
+Expected result it will give error message for the same 
+ ****Test Pass*****
+
+*********************************TEST 2 for Excel data**********************************************
+We are going to conduct test by giving different file name 
+Expected result it will give error message for the file not found 
+ ****Test Pass*****
+
+*********************************TEST 3 for Excel data**********************************************
+We are going to conduct test by giving different file format 
+Expected result it will give error message for the file not found 
+ ****Test Pass*****
+
+*********************************TEST 4 for Excel data**********************************************
+We are going to conduct test by giving different coloumn name in csv file 
+Expected result it will give error message for the incorrect data format 
+ ****Test Pass*****
+
+*********************************TEST 5 for Excel data**********************************************
+We are going to conduct test by giving correct data in csv file 
+Expected result it will run successfully 
+ ****Test Pass*****
+
+*********************************TEST 6 for Update text File**********************************************
+We are testing data by not giving username 
+Expected result it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 7 for Update text File**********************************************
+We are testing data by not giving userscore 
+Expected result it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 8 for Update text File**********************************************
+We are testing data by by providing all correct information 
+Expected result it will run successfully 
+ ****Test Pass*****
+
+*********************************TEST 9 for Compare score**********************************************
+We are testing data by not providing user score 
+Expected result it will provide error message 
+ ****Test Pass*****
+
+*********************************TEST 10 for Compare score**********************************************
+We are testing data by giving all needed information 
+Expected result it will work properly 
+ ****Test Pass*****
+
+*********************************TEST 11 for Calculate score**********************************************
+We are testing by considering an empty user input array 
+Expected result is it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 12 for Calculate score**********************************************
+We are testing by considering an input non zero array as given below
+Expected result is it will not give error message 
+ ****Test Pass*****
+
+*********************************TEST 13 for Start quiz**********************************************
+We are testing by considering an input player name greater than 10 char
+Expected result is it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 14 for Start quiz**********************************************
+We are testing by considering an input player name less than 10 char
+Expected result is it will not give error message 
+ *********************************TEST 1 for Excel data**********************************************
+We are first going to conduct test by not giving file name 
+Expected result it will give error message for the same 
+ ****Test Pass*****
+
+*********************************TEST 2 for Excel data**********************************************
+We are going to conduct test by giving different file name 
+Expected result it will give error message for the file not found 
+ ****Test Pass*****
+
+*********************************TEST 3 for Excel data**********************************************
+We are going to conduct test by giving different file format 
+Expected result it will give error message for the file not found 
+ ****Test Pass*****
+
+*********************************TEST 4 for Excel data**********************************************
+We are going to conduct test by giving different coloumn name in csv file 
+Expected result it will give error message for the incorrect data format 
+ ****Test Pass*****
+
+*********************************TEST 5 for Excel data**********************************************
+We are going to conduct test by giving correct data in csv file 
+Expected result it will run successfully 
+ ****Test Pass*****
+
+*********************************TEST 6 for Update text File**********************************************
+We are testing data by not giving username 
+Expected result it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 7 for Update text File**********************************************
+We are testing data by not giving userscore 
+Expected result it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 8 for Update text File**********************************************
+We are testing data by by providing all correct information 
+Expected result it will run successfully 
+ ****Test Pass*****
+
+*********************************TEST 9 for Compare score**********************************************
+We are testing data by not providing user score 
+Expected result it will provide error message 
+ ****Test Pass*****
+
+*********************************TEST 10 for Compare score**********************************************
+We are testing data by giving all needed information 
+Expected result it will work properly 
+ ****Test Pass*****
+
+*********************************TEST 11 for Calculate score**********************************************
+We are testing by considering an empty user input array 
+Expected result is it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 12 for Calculate score**********************************************
+We are testing by considering an input non zero array as given below
+Expected result is it will not give error message 
+ ****Test Pass*****
+
+*********************************TEST 13 for Start quiz**********************************************
+We are testing by considering an input player name greater than 10 char
+Expected result is it will give error message 
+ ****Test Pass*****
+
+*********************************TEST 14 for Start quiz**********************************************
+We are testing by considering an input player name less than 10 char
+Expected result is it will not give error message 
+ ****Test Pass*****
 

@@ -9,6 +9,8 @@
 #include "readexcel.h"
 #include "updatetxtfile.h"
 #include "comparescore.h"
+#include "Tcalculatescore.h"
+#include "Tstartquiz.h"
 
 int main(){
 	
@@ -151,5 +153,68 @@ int main(){
 		else{
 			fprintf(fp,"****Test Fail*****\n\n");
 		}
+		
+		fprintf(fp,"*********************************TEST 11 for Calculate score**********************************************\n");
+        fprintf(fp,"We are testing by considering an empty user input array \n");
+        fprintf(fp,"Expected result is it will give error message \n ");
+        
+        char userinput[] = {};
+		//val = calculatescore(userinput);
+		
+		if(val == 0){
+			
+			fprintf(fp,"****Test Pass*****\n\n");
+		}
+		else{
+			fprintf(fp,"****Test Fail*****\n\n");
+		}
+		
+		fprintf(fp,"*********************************TEST 12 for Calculate score**********************************************\n");
+        fprintf(fp,"We are testing by considering an input non zero array as given below\n");
+        fprintf(fp,"Expected result is it will not give error message \n ");
+        
+        char userinput1[] = {1,1,1,1,1,1,1,1,1,1};
+		//val = calculatescore(userinput1);
+		
+		if(val == 1){
+			
+			fprintf(fp,"****Test Pass*****\n\n");
+		}
+		else{
+			fprintf(fp,"****Test Fail*****\n\n");
+		}
+		
+		fprintf(fp,"*********************************TEST 13 for Start quiz**********************************************\n");
+        fprintf(fp,"We are testing by considering an input player name greater than 10 char\n");
+        fprintf(fp,"Expected result is it will give error message \n ");
+        
+        
+		val = startquiz();
+		
+		if(val == 0){
+			
+			fprintf(fp,"****Test Pass*****\n\n");
+		}
+		else{
+			fprintf(fp,"****Test Fail*****\n\n");
+		}
+		
+		fprintf(fp,"*********************************TEST 14 for Start quiz**********************************************\n");
+        fprintf(fp,"We are testing by considering an input player name less than 10 char\n");
+        fprintf(fp,"Expected result is it will not give error message \n ");
+        
+        
+		val = startquiz();
+		
+		if(val == 1){
+			
+			fprintf(fp,"****Test Pass*****\n\n");
+		}
+		else{
+			fprintf(fp,"****Test Fail*****\n\n");
+		}
+		
 	}	
 }
+	
+    
