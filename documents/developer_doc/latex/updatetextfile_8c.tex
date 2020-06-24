@@ -1,0 +1,53 @@
+\hypertarget{updatetextfile_8c}{}\doxysection{src/updatetextfile.c File Reference}
+\label{updatetextfile_8c}\index{src/updatetextfile.c@{src/updatetextfile.c}}
+
+
+update the highest score of the player in the file.  
+
+
+{\ttfamily \#include \char`\"{}../include/updatetextfile.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{updatetextfile_8c_a3548389b197f59085691b517f8331150}{updatetextfile}} (int \mbox{\hyperlink{main_8c_a44bb5128fa319afbf8e53a0938f62d47}{user\+\_\+score}}, char $\ast$user\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Initially, function will create file having data of the first user name with score gained by him/her. The function observes the Boolean value of the bool compare\+\_\+score (int user\+\_\+score); which generates true if highest score is achieved or false if user achieves comparatively lower score. If bool compare\+\_\+score (int user\+\_\+score) generates true, then file will be updated by the new data base (new high score and user name who achieved it). If bool compare\+\_\+score (int user\+\_\+score) generates false, then file will not be updated. If function overrides the file with new data, then it returns true, else it is false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+update the highest score of the player in the file. 
+
+\begin{DoxyAuthor}{Author}
+Hitul Shah 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{updatetextfile_8c_a3548389b197f59085691b517f8331150}\label{updatetextfile_8c_a3548389b197f59085691b517f8331150}} 
+\index{updatetextfile.c@{updatetextfile.c}!updatetextfile@{updatetextfile}}
+\index{updatetextfile@{updatetextfile}!updatetextfile.c@{updatetextfile.c}}
+\doxysubsubsection{\texorpdfstring{updatetextfile()}{updatetextfile()}}
+{\footnotesize\ttfamily bool updatetextfile (\begin{DoxyParamCaption}\item[{int}]{user\+\_\+score,  }\item[{char $\ast$}]{user\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Initially, function will create file having data of the first user name with score gained by him/her. The function observes the Boolean value of the bool compare\+\_\+score (int user\+\_\+score); which generates true if highest score is achieved or false if user achieves comparatively lower score. If bool compare\+\_\+score (int user\+\_\+score) generates true, then file will be updated by the new data base (new high score and user name who achieved it). If bool compare\+\_\+score (int user\+\_\+score) generates false, then file will not be updated. If function overrides the file with new data, then it returns true, else it is false. 
+
+\begin{DoxyAuthor}{Author}
+Hitul Shah 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em int} & user\+\_\+score score achieved by the user in current quiz game as integer. \\
+\hline
+\mbox{\texttt{ in}}  & {\em char$\ast$} & user\+\_\+name pointer user\+\_\+name which stores the user name as a string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean true if file is changed else false 
+\end{DoxyReturn}
+Comparing the current score with maximum score through function
+
+Updating the score as the current score is maximum

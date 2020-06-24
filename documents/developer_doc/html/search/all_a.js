@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['this_20program_20is_20designed_20to_20extracts_20data_20from_20excel_20that_20is_20in_20csv_20format_20_2d_20comma_20seperated_20and_20based_20on_20the_20data_20retrieved_20from_20the_20file_20which_20will_20be_20further_20seperated_20and_20stored_20in_20array_20of_20structure_20and_20this_20data_20will_20be_20used_20to_20do_20further_20funcionality_20in_20the_20quiz_2c_20i_2ee_2e_2c_20calcuate_5fscore_2c_20compare_5fscore_2c_20reset_5fscore_2c_20timer_2c_20help_2c_20display_5fscore_2c_20etc_20and_20at_20the_20end_20of_20the_20quiz_2c_20it_20generates_20highest_20score_20with_20the_20name_20of_20the_20player_20in_20the_20output_20text_20file_2e_26',['This program is designed to extracts data from excel that is in csv format - comma seperated and based on the data retrieved from the file which will be further seperated and stored in array of structure and this data will be used to do further funcionality in the quiz, i.e., calcuate_score, compare_score, reset_score, timer, help, display_score, etc and at the end of the quiz, it generates highest score with the name of the player in the output text file.',['../index.html',1,'']]],
+  ['timer_27',['Timer',['../timer_8c.html#a18b1d83444c115ae7f49bcd02ddcc1b0',1,'timer.c']]],
+  ['timer_2ec_28',['timer.c',['../timer_8c.html',1,'']]]
+];
