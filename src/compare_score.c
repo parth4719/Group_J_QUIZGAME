@@ -22,7 +22,7 @@
 
 bool compare_score(int user_score){
 	
-	if(user_score != ""){
+	if(user_score != '\0'){
 	
 
 	FILE *infile; 

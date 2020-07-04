@@ -1,1 +1,1 @@
-pavan,2
+reset,0

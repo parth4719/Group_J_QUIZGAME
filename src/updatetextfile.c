@@ -30,8 +30,8 @@ bool updatetextfile (int user_score, char* user_name) {
      */
     bool result;
     char score_string[5];
-    if(user_score != ""){
-    	if(user_name != ""){
+    if(user_score != '\0'){
+    	if(user_name != '\0'){
     		
     		
     			result = compare_score(user_score);
