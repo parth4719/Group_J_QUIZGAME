@@ -19,7 +19,7 @@
 void reset_score(){
     system("cls");
 	FILE *f;
-	f=fopen("../data/maximum.txt","w");
+	f=fopen("data\\maximum.txt","w");
     char reset[100];
     strcat(reset, "reset,0");
     fputs(reset, f);
