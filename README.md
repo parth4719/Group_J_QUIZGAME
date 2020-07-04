@@ -15,7 +15,7 @@ This quiz game application is used to test the general knowledge of the player. 
 ### Dependencies
 
 - Dev-C++ (IDE)
-- Cygwin (IDE)
+- TDM-GCC compiler
 - CSV file
 - Text file
 
